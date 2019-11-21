@@ -51,7 +51,7 @@ Released   : 20140322
 	<br />
 	<br />
 	<br />
-	<footer style="font-sizeof: 15px; text-align: center; margin-top:100px;">
+	<footer style="font-sizeof: 15px; text-align: center; margin-top:270px;">
 		Developed by Guilherme Pereira Santos Silva © - LinkedIn: https://www.linkedin.com/in/guilherme-pereira-20b151187/
 	</footer>
 

@@ -35,7 +35,6 @@ class PedraController extends Controller
 		$pedra = new Pedra();
 		
 		$pedra->numero = $request->get("numero");
-
 		$pedra->save();
 		
 

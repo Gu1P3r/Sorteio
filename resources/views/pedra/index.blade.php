@@ -18,23 +18,35 @@
 
 		<br />
 
-		<div class="col-sm-6" style="margin-left: -200px;">
+		<div class="col-sm-8" style="margin-left: -200px;">
 			<div class="card" style="background: #EAEAEA;">
 				<div class="card-header" style="font-size:25px; background: #05010E; color: white">Pedras Sorteadas</div>
 					<div class="card-body">
-						@foreach ($pedras as $pedra)
-						<div class="btn-group">
-							<button class="btn btn-primary" style = "background-color: #261349; border-color:#05010E; margin-top:5px;  border-radius: 18px; font-size:25px;">
-							{{ $pedra->numero }}
-							</button>
-						</div>
-						@endforeach
+						<?php
+							
+							foreach(range(1,130) as $sorteio):
+								foreach ($pedras as $pedra):
+									if ($pedra->numero == $sorteio){
+										$class =  'btn-success';
+										break;
+									}else{
+										$class =  'btn-danger';
+									}
+								endforeach;
+
+								printf('<button type="button" class="btn '.$class.'" style = "border-color:#05010E; margin-top:5px;  border-radius: 18px; font-size:25px;">%s</button>', $sorteio);
+							endforeach;
+								
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-sm-6" style="margin-left: 715px; margin-top: -250px;">
+		<br />
+		<br />
+
+		<div class="col-sm-6" style="margin-left: 720px; margin-top: -790px;">
 
 			<div class="card" style="background: #EAEAEA;">
 				<div class="card-header" style="font-size:25px; background: #05010E; color: white">Número da Pedra</div>
@@ -61,17 +73,25 @@
 			</div>
 		</div>
 
-		<div class="col-sm-6" style="margin-left: 900px; margin-top: -15px;">
+		<div class="col-sm-6" style="margin-left: 925px; margin-top: -530px;">
 			<div class="card" style="background: #EAEAEA;">
 				<div class="card-header" style="font-size:25px; background: #05010E; color: white">Ultimo Sorteado</div>
 					<div class="card-body" style="text-alignt:center">
+						@foreach ($pedras as $pedra)
+						@endforeach
 						@foreach ($pessoas as $pessoa)
 						@if ($pessoa->id == $pedra->numero)
+
+							@if($pessoa->image == null)
+							<label for="numero" style="font-size:80px; color:black; margin-left:100px;">{{ $pessoa->nome }}</label>	
+							@else
+							<label for="numero" style="font-size:80px; color:black; margin-left:100px;">{{ $pessoa->nome }}</label>
+							<br />
 							<img width="350px;" height="180px;" src="{{url('storage/logo/'.$pessoa->image)}}" style="margin-left:73px;" />
-							
+							@endif
 							<br />
 
-							<label for="numero" style="font-size:20px; color:black; margin-left:170px;">{{ $pessoa->nome }}</label>		
+								
 						@endif
 						@endforeach		
 					</div>
@@ -104,6 +124,5 @@
 	width: 550px;
 
 }
-</style>
 
 @endsection
