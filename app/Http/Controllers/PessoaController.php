@@ -35,6 +35,7 @@ class PessoaController extends Controller
 		}
 		
 		$pessoa->nome = $request->get("nome");
+		
 		//upando imagem
 
 		$nameFile = null;

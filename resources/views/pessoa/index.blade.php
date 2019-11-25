@@ -11,6 +11,7 @@
 	<form method="POST" action="/pessoa/salvar" enctype="multipart/form-data">
 
 		<input type="hidden" name="_token" value ="{{ csrf_token() }}" />
+
 		
 		<div class="form-group">
 			<label for="nome" style="font-size:20px; color:black;">Nome da Empresa ou Pessoa:</label>
@@ -26,7 +27,7 @@
 		</div>
 		
 		<input type="hidden" name="id" value="{{ $pessoa->id }}" />
-		
+
 		<br />
 		<br />
 

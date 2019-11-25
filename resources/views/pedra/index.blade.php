@@ -23,7 +23,7 @@
 				<div class="card-header" style="font-size:25px; background: #05010E; color: white">Pedras Sorteadas</div>
 					<div class="card-body">
 						<?php
-							
+							$class =  'btn-danger';
 							foreach(range(1,130) as $sorteio):
 								foreach ($pedras as $pedra):
 									if ($pedra->numero == $sorteio){
@@ -83,7 +83,7 @@
 						@if ($pessoa->id == $pedra->numero)
 
 							@if($pessoa->image == null)
-							<label for="numero" style="font-size:80px; color:black; margin-left:100px;">{{ $pessoa->nome }}</label>	
+							<label for="numero" style="font-size:70px; color:black; margin-left:90px;">{{ $pessoa->nome }}</label>	
 							@else
 							<label for="numero" style="font-size:80px; color:black; margin-left:100px;">{{ $pessoa->nome }}</label>
 							<br />

@@ -16,7 +16,7 @@
 	<table class="table table-striped">
 		<thead >
 			<tr>
-				<th style ="background-color: #05010E; color:white">ID</th>
+				<th style ="background-color: #05010E; color:white">Bilhete</th>
                 <th style ="background-color: #05010E; color:white">Nome</th>
 				<th style ="background-color: #05010E; color:white">Logo</th>
                 <th style ="background-color: #05010E; color:white"></th>
